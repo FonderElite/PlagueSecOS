@@ -1,4 +1,6 @@
- # <img align="left" width="250" height="150" src="https://raw.githubusercontent.com/PlagueSec/PlagueSecOS/master/pictures/logo.png"> PlagueSecurity Operating System 
+ # <img align="left" width="250" height="150" src="https://raw.githubusercontent.com/PlagueSec/PlagueSecOS/master/pictures/logo.png"> 
+ 
+ PlagueSecurity Operating System 
 A Customed Operating System for Security Researchers and Penetration Testers. Based on [Kali Linux](https://www.kali.org/)
 
 &nbsp;
