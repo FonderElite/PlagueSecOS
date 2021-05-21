@@ -1,0 +1,825 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+$best-font:'poppins';
+$max:100%;
+$plague-sec-bg:#161616;
+html{
+  scroll-behavior: smooth;
+  margin:0;
+  padding:0;
+
+}
+@mixin fulldiv{
+  width:$max;
+  height:$max;
+  position: absolute;
+}
+*{
+    font-family:$best-font ;
+
+}
+body{
+    background-color: $plague-sec-bg;
+    margin:0;
+    padding:0;
+   
+
+}
+@media screen and( min-width: 800px){
+/*Main*/
+.main{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    left: -0.5%;
+    top:0%;
+    background: url('plaguebg.png');
+    font-family: 'orbitron';
+    margin-left:0%;
+background-size: 100% 100%;
+}
+
+.glitch{
+  color:white;
+  background: rgb(10, 22, 22);
+  font-size:9vh;
+  position:absolute;
+  margin:1 auto;
+  height: 13.9%;
+  width: 100%;
+  left: 0.5%;
+  
+}
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:after{
+  content:attr(data-text);
+  position:absolute;
+  left:2px;
+  text-shadow:-4px 0 rgb(14, 94, 243);
+  top:0;
+  color:white;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:before{
+  content:attr(data-text);
+  position:absolute;
+  left:-2px;
+  text-shadow:3px 0 rgb(255, 0, 170); 
+  top:0;
+  color:white;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim-2 2s infinite linear alternate-reverse;
+}
+#mainlogo{
+    position: absolute;
+    width: 8%;
+    height:13%;
+    top: 0.1%;
+    left: 29%;
+    transition: 0.5s;
+    &:hover{
+ transition: 0.5s;    
+filter: brightness();
+    }
+}
+/*Navbar links*/
+li{
+  position: absolute;
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+  
+}
+
+#home{
+  position: absolute;
+  left: 50%;
+  top: 5%;
+}
+#info{
+  left: 59%;
+  top: 5%;
+}
+#more-info{
+  left: 73%;
+  top: 5%;
+}
+#footer{
+  left: 90%;
+  top: 5%;
+}
+.navlink{
+  font-size: 3vh;
+  position: absolute;
+  text-decoration: none;
+  color: rgb(223, 217, 217);
+  
+}
+.navlink:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.navlink:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+/*submain div*/
+#submaindiv{
+position: absolute;
+left: 0.5%;
+top: 15%;
+width: 31.5%;
+height: 50%;
+
+
+}
+#submainh2{
+  color: rgb(204, 204, 204);
+  text-align: center;
+  border-radius: 5px;
+  top: 20%;
+  position: absolute;
+}
+#submainp1{
+  color: rgb(206, 206, 206);
+  text-align: center;
+  position: absolute;
+  font-size: 2.7vh;
+  top: 50%;
+}
+/*Buttons*/
+#download{
+  position: absolute;
+  padding: 10px 25px;
+  left: 10%;
+  top: 105%;
+  border-color: rgb(192, 63, 63);
+  background: rgb(218, 208, 193);
+  transition: 0.5s;
+  border-radius: 5px;
+  &:hover{
+background:black;
+color:white;
+text-shadow: 0px 2px 3px rgb(192, 63, 63);
+box-shadow: 0px 0px 10px 2px rgb(192, 63, 63);
+transition: 0.5s;
+  }
+}
+#documentation{
+  position: absolute;
+  left: 50%;
+  top: 105%;
+  padding: 10px 25px;
+  border-color: rgb(0, 174, 255);
+  background: rgb(218, 208, 193);
+  transition: 0.5s;
+  border-radius: 5px;
+  &:hover{
+    transition: 0.5s;
+    background:black;
+    color:white;
+    text-shadow:0px 2px 3px  rgb(0, 174, 255);
+box-shadow: 0px 0px 10px 2px rgb(0, 174, 255);
+
+      }
+}
+/*Arrow bounce*/
+#arrow-down{
+  position: absolute;
+  height: 10%;
+  width: 10%;
+  top: 152%;
+  left:150%;
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+/*Main End*/
+/*Info-container*/
+#info-container{
+  @include fulldiv;
+  background: rgb(216, 216, 216);
+  top: 100%;
+  height: 140%;
+  left:0%;
+}
+#info1h1{
+  color:rgb(17, 17, 17);
+  text-align: center;
+  position: absolute;
+  font-size: 6vh;
+  left: 33%;
+}
+#info1p1{
+  color: rgb(17, 17, 17);
+  width: 50%;
+  text-align: center;
+  position: absolute;
+  left: 22%;
+  top: 15%;
+  font-size: 3vh;
+
+  
+}
+@mixin downinfodivs{
+  width: 25%;
+  height:27%;
+  position: absolute;
+  padding: 10px;
+  background:rgb(19, 18, 18);
+  border-radius: 10px;
+  transition: 0.5s;
+  top:65%;
+  &:hover{
+  opacity: 1;
+  filter:brightness(100%);
+  }
+}
+@mixin infodivs{
+  width: 25%;
+  height:27%;
+  position: absolute;
+  padding: 10px;
+  background:rgb(19, 18, 18);
+  border-radius: 10px;
+  transition: 0.5s;
+  top:30%;
+  &:hover{
+  opacity: 1;
+  filter:brightness(100%);
+  }
+}
+/*infodivs*/
+#infodiv1{
+ @include infodivs;
+
+ left: 5%;
+}
+#infodiv1h2-1{
+  color: rgb(214, 206, 191);
+  text-align: center;
+}
+#infodiv1p1{
+  color:rgb(214, 206, 191);
+  text-align: center;
+}
+
+#infodiv2{
+  @include infodivs;
+
+  left: 35%;
+ }
+ #infodiv2h2-2{
+   color: rgb(214, 206, 191);
+   text-align: center;
+ }
+ #infodiv2p2{
+   color:rgb(214, 206, 191);
+   text-align: center;
+ }
+ #infodiv3{
+  @include infodivs;
+
+  left: 65%;
+ }
+ #infodiv3h2-3{
+   color: rgb(214, 206, 191);
+   text-align: center;
+ }
+ #infodiv3p3{
+   color:rgb(214, 206, 191);
+   text-align: center;
+ }
+
+ #infodiv4{
+  @include downinfodivs;
+  left: 20%;
+ }
+ #infodiv4h2-4{
+   color: rgb(214, 206, 191);
+   text-align: center;
+ }
+ #infodiv4p4{
+   color:rgb(214, 206, 191);
+   text-align: center;
+ }
+ #infodiv5{
+  @include downinfodivs;
+  left: 50%;
+ }
+ #infodiv5h2-5{
+   color: rgb(214, 206, 191);
+   text-align: center;
+ }
+ #infodiv5p5{
+   color:rgb(214, 206, 191);
+   text-align: center;
+ }
+ /*DemoPic Div*/
+ #demopic{
+   @include fulldiv;
+   top: 240%;
+   background:rgb(31, 30, 30);
+   height: 150%;
+   left: 0%;
+ }
+ #plaguesec-pic{
+   width: 80%;
+   top: 10%;
+   box-shadow: 0px 1px 5px 1px white;
+ }
+ #picdiv{
+  position: absolute;
+  top: 10%;
+  left: 9%;
+ }
+ #demopich1{
+  position: absolute;
+  left: 35%;
+   color: white;
+ }
+ 
+ /*fonts awesome icons*/
+@for $i from 1 to 6{
+  #i#{$i}{
+    color: cyan;
+  }
+}
+/*Tools*/
+#tools{
+  position: absolute;
+  color: rgb(19, 18, 18);
+  background: rgb(212, 211, 211);
+  width: 100%;
+  height: 30%;
+  top: 80%;
+}
+#toolsh2{
+  position: absolute;
+  left: 35%;
+}
+#toolsinfop{
+  color: black;
+  position: absolute;
+  text-align: center;
+  top: 20%;
+  left: 31.5%;
+  width: 35%;
+}
+
+/*@each didnt work for some reason.*/
+@mixin toolstyle{
+  width: 150%;
+  height: 150%;
+  position: absolute;
+ transition:0.5s;
+}
+#toolsimgdiv{
+position: absolute;
+width: 80%;
+height: 25%;
+top:63%;
+left: 8%;
+border-radius:10px;
+
+}
+
+ @for $i from 1 to 9{
+   #tool#{$i}{
+    @include toolstyle;
+   
+ }
+
+}
+#tool1{
+  left: -74%;
+  top: -30%;
+}
+#tool2{
+  left: -61%;
+  top: -30%;
+}
+#tool3{
+  left: -45%;
+  top: -30%;
+}
+#tool4{
+  left: -30%;
+  top: -15%;
+
+}
+#tool5{
+  left: -15%;
+  top: -15%;
+} 
+#tool6{
+  left: 1%;
+  top: -15%;
+ 
+}
+#tool7{
+  left: 15%;
+  top: -15%;
+
+}
+#tool8{
+  left: 31%;
+  top: -15%;
+
+}
+/*Documentation*/
+#docdiv{
+  @include fulldiv;
+  height: 70%;
+  background: rgb(197, 197, 197);
+  position: absolute;
+  top: 110%;
+  color:rgb(31, 31, 31);
+}
+#doch1{
+  position: absolute;
+  left: 40%;
+  top: 2%;
+}
+@mixin docsvgs{
+position: absolute;
+width: 10%;
+height: 15%;
+top: 1%;
+left: 20%;
+}
+#githubh1{
+position: absolute;
+left: 35%;
+border-radius: 5px;
+
+}
+#githubsvg{
+@include docsvgs;
+border-radius: 10px;
+width: 13%;
+height: 16%;
+border:1px solid rgb(83, 83, 83);
+}
+@mixin subinfodiv{
+  width: 80%;
+  height: 65%;
+  position:absolute;
+  left: 10%;
+  background: rgb(26, 25, 25);
+color: rgb(241, 241, 241);
+top: 23%;
+transition: 0.5s;
+border-radius: 5px;
+  left: 10%;
+}
+#githubinfo{
+ @include subinfodiv;
+}
+#githubinfop{
+  color: black;
+}
+#github-page{
+  padding: 7px 15px;
+  position: absolute;
+background:white;
+color: black;
+font-size: 2vh;
+border: 1px solid cyan;
+left: 36%;
+top: 85%;
+transition: 0.5s;
+&:hover{
+  background: black;
+  color:white;
+  box-shadow: 0px 0px 5px 1px cyan;
+  transition: 0.5s;
+  cursor:pointer;
+
+}
+}
+#fbsvg{
+  @include docsvgs;
+height: 13%;
+}
+#fbh1{
+position: absolute;
+left: 35%;
+}
+#fbinfo{
+ @include subinfodiv;
+}
+#fbp{
+  text-align: center;
+  width: 100%;
+}
+#fb-page{
+  padding: 7px 15px;
+  position: absolute;
+background:white;
+color: black;
+font-size: 2vh;
+border: 1px solid rgb(255, 38, 0);
+left: 36%;
+top: 85%;
+transition: 0.5s;
+&:hover{
+  background: black;
+  color:white;
+  box-shadow: 0px 0px 5px 1px rgb(255, 30, 0);
+  transition: 0.5s;
+  cursor:pointer;
+
+}
+}
+@mixin docdiv{
+  position: absolute;
+  height: 70%;
+  width: 40%;
+  border-radius: 10px;
+  top: 20%;
+  color: white;
+  text-align: center;
+  background: rgb(22, 22, 22);
+}
+
+#docdiv1{
+@include docdiv;
+
+  left: 5%;
+
+}
+
+#docdiv2{
+  @include docdiv;
+  left: 55%;
+ 
+}
+/*Footer*/
+footer{
+  width: 100%;
+  height: 68%;
+  height: $best-font;
+  background: rgb(26, 25, 25);
+  top: 180%;
+  position: absolute;
+}
+#footerh1{
+  color: rgb(46, 214, 60);
+  position: absolute;
+  left: 1%;
+}
+#symbol1h1{
+  color:white;
+  position: absolute;
+  left: 21%;
+}
+#symbol2h1{
+  color: rgb(0, 123, 199);
+  position: absolute;
+  left: 21.8%;
+}
+#rooth1{
+  color: white;
+  position: absolute;
+  left: 23.5%;
+}
+#typep{
+  color:rgb(211, 211, 211);
+  font-size: 5vh;
+  position: absolute;
+  top: -1%;
+  left: 26%;
+}
+#connect{
+  width: 40%;
+  height: 20%;
+  background:rgb(37, 37, 37);
+  top: 20%;
+  left: 1%;
+  position: absolute;
+
+}
+$downicolor:rgb(16, 175, 224);
+#icomment{
+  color: $downicolor;
+ 
+}
+#connecth1{
+  color:white;
+position: absolute;
+left: 1%;
+
+}
+#connectp1{
+  color:white;
+  position: absolute;
+  top: 40%;
+}
+#social-links{
+  position: absolute;
+  width: 50%;
+  height: 25%;
+  background: rgb(37, 37, 37);
+  color: white;
+  top: 48%;
+  left: 1%;
+
+}
+#slh2{
+  position: absolute;
+  left: 1%;
+  top: 0%;
+}
+#iusers{
+  color: $downicolor;
+}
+@mixin iconp{
+  position: absolute; 
+  top: 64%;
+ 
+}
+@mixin iconstyle{
+  font-size: 4vh;
+  position: absolute;
+  border-radius: 20px;
+  border: 1px solid white; 
+  width: 13%;
+  height: 15%;
+  text-align: center;
+  top: 50%;
+  transition:0.5s;
+  color: white;
+}
+#slp{
+@include iconp;
+  left: 1.7%;
+}
+#slp2{
+  @include iconp;
+  left: 22%;
+
+}
+#slp3{
+  @include iconp;
+  left: 41.5%;
+}
+#slp4{
+  @include iconp;
+  left: 61.6%;
+}
+#slp5{
+  @include iconp;
+  left: 82.5%;
+}
+/*Social-icons fontsawesome footer*/
+#ifacebook{
+  @include iconstyle;
+  left: 1%;
+    background:rgb(5, 88, 167);
+    transition:0.5s;
+   
+}
+#igithub{
+  @include iconstyle;
+  left:20%;
+
+    background:rgb(22, 22, 22);
+    transition:0.5s;
+}
+#idiscord{
+  @include iconstyle;
+  left: 40%;
+
+    background:rgb(223, 65, 53);
+    transition:0.5s;
+}
+#ilinkedin{
+  @include iconstyle;
+  left: 60%;
+    background:rgb(53, 130, 202);
+    transition:0.5s;
+  
+}
+#itwitter{
+  @include iconstyle;
+  left: 80%;
+    background:rgb(5, 156, 167);
+    transition:0.5s;
+  
+}
+.footera{
+color:$downicolor;
+}
+
+#below-label{
+  position:absolute;
+  top: 91%;
+  width: 170%;
+  left: 4%;
+  color:white;
+}
+#pentest{
+  position:absolute;
+  left: 55%;
+  top: 200%;
+  background:rgb(37, 37, 37);
+  width: 40%;
+  height: 30%;
+
+}
+#pentesth2{
+color: rgb(231, 227, 227);
+left: 2%;
+position: absolute;
+}
+#iflag{
+  color:rgb(9, 211, 9);
+}
+#htbsvg{
+  width: 60%;
+  height: 30%;
+  position: absolute;
+  top: 20%;
+  left:2%;
+  
+}
+#thmsvg{
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  top: 50%;
+  left:2%;
+}
+#thmh1{
+  position: absolute;
+  color:rgb(226, 226, 226);
+  top: 45%;
+  left: 25%;
+}
+#hackeronesvg{
+  width: 8%;
+  height: 20%;
+  position: absolute;
+  top: 72%;
+  left: 2%;
+}
+#hackeroneh1{
+  position: absolute;
+  color:rgb(226, 226, 226);
+  top: 69%;
+  left: 15%;
+}
+#flagsvg{
+  height: 60%;
+  width: 30%;
+  position: absolute;
+  left: 70%;
+  top: 5%;
+}
+}
+html,body{
+  width: 100%;
+  height:100%;
+  margin:0px;
+  padding:0px;
+  overflow-x: hidden;
+}
